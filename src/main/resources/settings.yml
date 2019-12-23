@@ -1,0 +1,6 @@
+# Configuration file for AntiSafeCombatLog.
+
+prefix: "&8[&4AntiSafeCombatLog&8] &r"
+no-permission: "&cYou do not have permission to execute that command."
+successfully-reloaded: "&aReloaded all configuration files."
+timer: 10

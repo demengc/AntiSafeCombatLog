@@ -1,0 +1,8 @@
+name: AntiSafeCombatLog
+version: ${project.version}
+main: com.demeng7215.antisafecombatlog.AntiSafeCombatLog
+api-version: 1.13
+depend: [WorldGuard,WorldEdit]
+author: Demeng7215
+description: Allows players to PvP in safe zones if tagged.
+website: https://demeng7215.com
