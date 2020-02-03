@@ -60,7 +60,6 @@ public final class AntiSafeCombatLog extends JavaPlugin {
 		MessageUtils.setPrefix(getSettings().getString("prefix"));
 
 		MessageUtils.console("&aAntiSafeCombatLog v" + Common.getVersion() + " has been successfully enabled!");
-
 	}
 
 	@Override

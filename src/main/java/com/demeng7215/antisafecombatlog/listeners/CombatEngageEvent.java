@@ -64,6 +64,12 @@ public class CombatEngageEvent implements Listener {
 
 				if (combatTagged.get(attacker.getUniqueId().toString()) > System.currentTimeMillis() &&
 						combatTagged.get(target.getUniqueId().toString()) > System.currentTimeMillis()) {
+
+					long tagTimeout = System.currentTimeMillis() + (i.getSettings().getLong("timer") * 1000);
+
+					combatTagged.put(attacker.getUniqueId().toString(), tagTimeout);
+					combatTagged.put(target.getUniqueId().toString(), tagTimeout);
+
 					e.setCancelled(false);
 				}
 			}
