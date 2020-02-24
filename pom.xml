@@ -6,7 +6,7 @@
 
     <groupId>com.demeng7215</groupId>
     <artifactId>antisafecombatlog</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>AntiSafeCombatLog</name>
@@ -81,7 +81,7 @@
         <dependency>
             <groupId>com.demeng7215</groupId>
             <artifactId>demlib</artifactId>
-            <version>1.0.0</version>
+            <version>4.0.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

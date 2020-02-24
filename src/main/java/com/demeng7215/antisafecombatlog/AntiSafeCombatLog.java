@@ -4,10 +4,10 @@ import com.demeng7215.antisafecombatlog.commands.ASCLCmd;
 import com.demeng7215.antisafecombatlog.listeners.CombatEngageEvent;
 import com.demeng7215.antisafecombatlog.listeners.CombatLogEvent;
 import com.demeng7215.demlib.DemLib;
-import com.demeng7215.demlib.api.BlacklistSystem;
 import com.demeng7215.demlib.api.Common;
 import com.demeng7215.demlib.api.DeveloperNotifications;
 import com.demeng7215.demlib.api.Registerer;
+import com.demeng7215.demlib.api.connections.WebUtils;
 import com.demeng7215.demlib.api.files.CustomConfig;
 import com.demeng7215.demlib.api.messages.MessageUtils;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -27,13 +27,13 @@ public final class AntiSafeCombatLog extends JavaPlugin {
 	@Override
 	public void onEnable() {
 
-		DemLib.setPlugin(this, "GGcC5uumxUm9bsGz");
+		DemLib.setPlugin(this);
 		MessageUtils.setPrefix("&8[&4AntiSafeCombatLog&8]");
 
 		taggedPlayers = new HashMap<>();
 
 		try {
-			if (BlacklistSystem.checkBlacklist()) {
+			if (new WebUtils("https://demeng7215.com/antipiracy/blacklist.txt").contains("GGcC5uumxUm9bsGz")) {
 				MessageUtils.error(null, 0, "Plugin has been forcibly disabled.", true);
 				return;
 			}

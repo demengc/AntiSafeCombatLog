@@ -12,12 +12,10 @@ public class CombatLogEvent implements Listener {
 
 		if (CombatEngageEvent.combatTagged.containsKey(e.getPlayer().getUniqueId().toString())) {
 
-			if (CombatEngageEvent.combatTagged.get(e.getPlayer().getUniqueId().toString()) > System.currentTimeMillis()) {
-
+			if (CombatEngageEvent.combatTagged.get(e.getPlayer().getUniqueId().toString()) > System.currentTimeMillis())
 				e.getPlayer().setHealth(0);
 
-				CombatEngageEvent.combatTagged.remove(e.getPlayer().getUniqueId().toString());
-			}
+			CombatEngageEvent.combatTagged.remove(e.getPlayer().getUniqueId().toString());
 		}
 	}
 }
