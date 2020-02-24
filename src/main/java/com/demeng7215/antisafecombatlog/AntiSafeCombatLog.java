@@ -3,6 +3,7 @@ package com.demeng7215.antisafecombatlog;
 import com.demeng7215.antisafecombatlog.commands.ASCLCmd;
 import com.demeng7215.antisafecombatlog.listeners.CombatEngageEvent;
 import com.demeng7215.antisafecombatlog.listeners.CombatLogEvent;
+import com.demeng7215.antisafecombatlog.listeners.TaggedPlayerDeathEvent;
 import com.demeng7215.demlib.DemLib;
 import com.demeng7215.demlib.api.Common;
 import com.demeng7215.demlib.api.DeveloperNotifications;
@@ -55,6 +56,7 @@ public final class AntiSafeCombatLog extends JavaPlugin {
 		getLogger().info("Registering listeners...");
 		Registerer.registerListeners(new CombatEngageEvent(this));
 		Registerer.registerListeners(new CombatLogEvent());
+		Registerer.registerListeners(new TaggedPlayerDeathEvent());
 		DeveloperNotifications.enableNotifications("ca19af04-a156-482e-a35d-3f5f434975b5");
 
 		MessageUtils.setPrefix(getSettings().getString("prefix"));

@@ -10,12 +10,12 @@ public class CombatLogEvent implements Listener {
 	@EventHandler(priority = EventPriority.HIGH)
 	public void onCombatLog(PlayerQuitEvent e) {
 
-		if (CombatEngageEvent.combatTagged.containsKey(e.getPlayer().getUniqueId().toString())) {
+		final String uuid = e.getPlayer().getUniqueId().toString();
 
-			if (CombatEngageEvent.combatTagged.get(e.getPlayer().getUniqueId().toString()) > System.currentTimeMillis())
+		if (CombatEngageEvent.combatTagged.containsKey(uuid))
+			if (CombatEngageEvent.combatTagged.get(uuid) > System.currentTimeMillis())
 				e.getPlayer().setHealth(0);
 
-			CombatEngageEvent.combatTagged.remove(e.getPlayer().getUniqueId().toString());
-		}
+		CombatEngageEvent.combatTagged.remove(uuid);
 	}
 }
